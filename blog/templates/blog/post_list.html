@@ -11,13 +11,13 @@
         <div>
            <p>Start to learn!</p>
            <h2>Biology Section</h2>
-           <h3>Anatomy</h3>
+           <h3>Parts and functions of our body</h3>
            <h4>The head</h4>
     
          {% for post in posts %}
              <div>
                  <p>published: {{ post.published_date }}</p>
-                 <h1><a href="">{{ post.title }}</a></h1>
+                 <h4><a href="">{{ post.title }}</a></h4>
                  <p>{{ post.text|linebreaks }}</p>
              </div>
          {% endfor %}
