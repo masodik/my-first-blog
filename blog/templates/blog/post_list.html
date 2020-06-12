@@ -1,9 +1,17 @@
+{%load staticfiles%}
 <html>
     <head>
-        <title>My study room</title>
+	<title>My study room</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{%static 'css/blog.css' %}">
+	<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" 
+	type="text/css">
     </head>
     <body>
-        <h1><a href="https://masodik.github.io/my-virtual-study">My study room</a></h1>
+	<div class="page-header">
+        	<h1><a href=" https://masodik.github.io/my-virtual-study/">My study room</a></h1>
+	</div>
        
         <div>
            <p>Start to learn! This is my blog, where I write about those topics I am interested in. Feel free to spend time here and maybe    you'll find something useful and interesting for yourself. </p>
@@ -12,20 +20,31 @@
 	<div>
            <h2>Biology Corner</h2>
 	</div>
-           <h3>Parts and functions of our body</h3>
-           <h4>The head</h4>
-    
-         {% for post in posts %}
-             <div>
-                 <p>published: {{ post.published_date }}</p>
-                 <h4><a href="">{{ post.title }}</a></h4>
-                 <p>{{ post.text|linebreaks }}</p>
-             </div>
-         {% endfor %}
-
-        <div>
-          <h2>The Language Corner</h2>
+        <div>   
+		<h3>Parts and functions of our body</h3>
+	</div>
+	<div>
+           	<h4>The head</h4>
         </div>
+        <div class="content container">
+		 <div class="row">
+			 <div class="col-md-8">
+				{% for post in posts %}
+					<div class="post">
+						<div class="date">
+							<p>published: {{ post.published_date }}</p>
+						</div>
+						<h1><a href="">{{ post.title }}</a></h1>
+						<p>{{ post.text|linebreaksbr }}</p>
+					</div>
+				{% endfor %}
+			 </div>
+		 </div>
+	 </div>
+
+         <div>
+       	  	 <h2>The Language Corner</h2>
+         </div>
 
         <div>
           <h3>русский язык</h3>
