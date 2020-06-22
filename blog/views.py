@@ -35,7 +35,7 @@ def english_detail(request, eng):
 
 def german(request):
 	germans = German.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-	return render(request, 'blog/german.html', {'german':germans})
+	return render(request, 'blog/german.html', {'germans':germans})
 
 def russian(request):
 	russians = Russian.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
