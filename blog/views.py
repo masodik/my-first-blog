@@ -22,24 +22,24 @@ def post_list(request):
 	return render(request, 'blog/post_list.html', {'posts':posts})
 
 def chemistry(request):
-	chemie = Chemie.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-	return render(request, 'blog/chemistry.html', {'chemie':chemie})
+	chemies = Chemie.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+	return render(request, 'blog/chemistry.html', {'chemies':chemies})
 
 def english(request):
-	english = English.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-	return render(request, 'blog/english.html', {'english':english})
+	englishs = English.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+	return render(request, 'blog/english.html', {'englishs':englishs})
 
 def english_detail(request, eng):
 	english = get_object_or_404(English, pk=eng)
 	return render(request, 'blog/english_detail.html', {'english': english})
 
 def german(request):
-	german = German.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-	return render(request, 'blog/german.html', {'german':german})
+	germans = German.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+	return render(request, 'blog/german.html', {'german':germans})
 
 def russian(request):
-	russian = Russian.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-	return render(request, 'blog/russian.html', {'russian':russian})
+	russians = Russian.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+	return render(request, 'blog/russian.html', {'russians':russians})
 
 def chemistry_detail(request, cm):
 	chemie = get_object_or_404(Chemie, pk=cm)
