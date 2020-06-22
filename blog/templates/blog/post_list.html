@@ -1,78 +1,13 @@
-{%load staticfiles%}
-<html>
-    <head>
-	<title>My study room</title>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="{%static 'css/blog.css' %}">
-	<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" 
-	type="text/css">
-    </head>
-    <body>
-	<div class="page-header">
-        	<h1><a href=" https://masodik.github.io/my-virtual-study/">My study room</a></h1>
-	</div>
-       
-        <div>
-           <p>Start to learn! This is my blog, where I write about those topics I am interested in. Feel free to spend time here and maybe    you'll find something useful and interesting for yourself. </p>
+{% extends 'blog/base.html' %}
 
-	</div>
-	<div>
-           <h2>Biology Corner</h2>
-	</div>
-        <div>   
-		<h3>Parts and functions of our body</h3>
-	</div>
-	<div>
-           	<h4>The head</h4>
-        </div>
-        <div class="content container">
-		 <div class="row">
-			 <div class="col-md-8">
-				{% for post in posts %}
-					<div class="post">
-						<div class="date">
-							<p>published: {{ post.published_date }}</p>
-						</div>
-						<h1><a href="">{{ post.title }}</a></h1>
-						<p>{{ post.text|linebreaksbr }}</p>
-					</div>
-				{% endfor %}
-			 </div>
-		 </div>
+{% block content %}
+  {% for post in posts %}
+    <div class="post">
+	 <div class="date">
+	   {{ post.published_date }}
 	 </div>
-
-         <div>
-       	  	 <h2>The Language Corner</h2>
-         </div>
-
-        <div>
-          <h3>русский язык</h3>
-          <h4>Русские переводы Библии</h4>
-          <ul><li><a href="https://bible.by/syn/">Синодальный перевод</a></li>
-          <li><a href="https://bible.by/nrt/">Новый русский перевод</a></li>
-          <li><a href="https://bible.by/wbtc/">Cовременный перевод WBTC</a></li></ul>
-         </div>
-
-         <div>
-          <h3>Deutsch</h3>
-            <h4>Videos auf Deutsch</h4>
-             <ul><li><a href="https://www.youtube.com/watch?v=OvtzcveUTY8">MrWissen2Go</a></li>
-	     <li><a href="https://www.youtube.com/watch?v=3zvTVVRIBNg">DeutschLera</a></li></ul>
-	     <p><a href="https://www.youtube.com/watch?v=jun9hjqCzqE&list=PLr_U4dE6BCICAtEivSt0YKDCBbt4tjVHE">Die Schlacter Audiobibel</a><p>
-             <p><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjpuM3owefpAhUAAhAIHS-PAOcQFjABegQIARAB&url=https%3A%2F%2Fwww.schlachterbibel.de%2Fde%2Fbibel%2Fneues_testament%2F&usg=AOvVaw074O-IyPTGBQOZyguhybOd">Der Text der Bibel</a><p>
-         </div>
-
-         <div>
-          <h3>English</h3>
-          <p>Learn the phrases!</p>
-         </div>
-
-         <div>
-          <h2>Spielplatz</h2>
-          <p>Hier werden interessante Fragen und Antworten sein</p>
-         </div>
-    </body>
-</html>
-
-
+	 <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+	 <p>{{ post.text|linebreaksbr|truncatewords:50 }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}			 

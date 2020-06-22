@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+   
+{% block content %}
+<p>English is the most widely spoken language in the world today. You will find here articles written in this language.</p>
+	{% for english in english %}
+		<div class="post">
+			<div class="date">
+				{{ english.published_date }}
+			</div>
+			<h2><a href="{% url 'english_detail' eng=english.pk %}">{{ english.title}}</a></h2>
+			<p>{{ english.text|linebreaksbr|truncatewords:50 }}</p>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+

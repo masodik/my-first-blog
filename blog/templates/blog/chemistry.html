@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h3><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiEoJeC-pXqAhXs1uAKHUilCSwQFjAAegQIAhAB&url=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUC0cd_-e49hZpWLH3UIwoWRA&usg=AOvVaw2XoPevF9H7Sct2pi6EfHeH">Learn from Professor Dave!</a></h3>
+<h2>Posts:</h2>
+  {% for chemie in chemie %}
+    <div class="post">
+	 <div class="date">
+	   {{ chemie.published_date }}
+	 </div>
+	 <h2><a href="{% url 'chemistry_detail' cm=chemie.pk %}">{{ chemie.title }}</a></h2>
+	 <p>{{ chemie.text|linebreaksbr|truncatewords:50 }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}			 

@@ -1,5 +1,5 @@
 h1 a {
-    color: #FCA205;
+    color: #008000;
     font-family: 'Chilanka';
 }
 
@@ -20,12 +20,17 @@ body {
 }
 
 .content {
-	margin-left: 80px;
+	margin-left: 70px;
+}
+
+h1 {
+	font-family: 'Chilanka';	
+	color: #008000
 }
 
 h2 {
-	font-family: 'Chilanka';	
-	color: #4B0082
+	font-family: 'Times New Roman';
+	color: #838a04
 }
 
 h3 {
@@ -39,7 +44,7 @@ h4 {
 }
 
 .date {
-	color: #828282;
+	color: #282828;
 }
 
 .save {
@@ -61,5 +66,5 @@ h4 {
 }
 
 .post h1 a, .post h1 a:visited {
-	color: #000000;
+	color: #121412;
 }

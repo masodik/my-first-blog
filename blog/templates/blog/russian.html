@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2><a href="https://bible.by/audio/new-russian/">Аудио Библия</a></h2>
+	{% for russian in russian %}
+		<div class="post">
+			<div class="date">
+				{{ russian.published_date }}
+			</div>
+			<h2><a href="{% url 'russian_detail' rn=russian.pk %}">{{ russian.title }}</a></h2>
+			<p>{{ russian.text|linebreaksbr|truncatewords:50 }}</p>
+		</div>
+	{% endfor %}
+{% endblock %}
+

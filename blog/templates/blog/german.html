@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+   <p>Hier kannst du meine neuste Beiträgen auf Deutsch finden. Jetzt gibt es noch nicht keine. Aber diese Kanale sind sehr lehrreich.</p>
+   <ul><li><h2><a href="https://youtu.be/OvtzcveUTY8">MrWissen2Go</a></h2></li>
+   <li><h2><a href="https://youtu.be/r7tKcZR9GnU">DeutschLera</a></h2></li>
+   <li><h2><a href="https://youtu.be/jun9hjqCzqE?list=PLWb63eP-Esk8AhCA7SzjCbvMfqzvpxvGV">Die Schlachter Audiobibel</a></h2></li></ul>
+  	{% for german in german %}
+    		<div class="post">
+	 		<div class="date">
+	   			{{ german.published_date }}
+			 </div>
+			 <h2><a href="{% url 'german_detail' gm=german.pk %}">{{ german.title }}</a></h2>
+			 <p>{{ german.text|linebreaksbr|truncatewords:50 }}</p>
+    		</div>
+	{% endfor %}
+{% endblock %}		
