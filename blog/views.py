@@ -17,6 +17,9 @@ def science(request):
 def languages(request):
 	return render(request, 'blog/languages.html')
 
+def welcome(request):
+	return render(request, 'blog/welcome.html')
+
 def post_list(request):
 	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 	return render(request, 'blog/post_list.html', {'posts':posts})
@@ -108,6 +111,9 @@ def russian_new(request):
 	else:
 		form = RussianForm()
 	return render(request, 'blog/russian_new.html',  {'form': form})
+
+
+	
 
 
 

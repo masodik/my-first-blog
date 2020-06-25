@@ -53,5 +53,8 @@ urlpatterns = [
 	url(r'^languages/russian/new/$',
 		views.russian_new,
 		name='russian_new'),
+	url(r'^welcome/$',
+		views.welcome,
+		name='welcome'),
 		
 ]

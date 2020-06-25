@@ -1,9 +1,20 @@
 {% extends 'blog/base.html' %}
 
+
 {% block content %}
 	<h1><a href="{% url 'science' %}">Science Section</a></h1>
+<br>
 	<h1><a href="{% url 'languages' %}">Language Section</a></h1>
 {% endblock %}
+
+
+{% block welcome %}
+     <h4>Welcome to my blog. On this website I write about science, history and languages. Feel free to learn from my articles, but it does not harm if you check the information you find. My main aim with this site is to teach myself the topics I write about. As I once heard, you don't really understand anything until you teach it. Therefore I decided to learn those topics I am interested in so much, that I would be able to teach it to someone else. Hope this project will succeed. It isn't perfect yet, but I want to do my best.</h4>
+<br>
+<br>
+<br>
+{% endblock %}
+
 
 
 
