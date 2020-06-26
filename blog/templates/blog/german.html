@@ -1,5 +1,9 @@
 {% extends 'blog/base.html' %}
 
+{% block german_new %}
+<a href="{% url 'german_new' %}" class="top-menu"><span class="glyphicon glyphicon-cloud"></span></a>
+{% endblock %}
+
 {% block content %}
    <p>Hier kannst du meine neuste Beiträgen auf Deutsch finden. Jetzt gibt es noch nicht keine. Aber diese Kanale sind sehr lehrreich.</p>
    <ul><li><h2><a href="https://youtu.be/OvtzcveUTY8">MrWissen2Go</a></h2></li>

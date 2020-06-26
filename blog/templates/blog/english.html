@@ -1,5 +1,10 @@
 {% extends 'blog/base.html' %}
-   
+
+{% block english_new %}
+<a href="{% url 'english_new' %}" class="top-menu"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endblock %}
+
+
 {% block content %}
 <p>English is the most widely spoken language in the world today. You will find here articles written in this language.</p>
 	{% for english in englishs %}
@@ -12,5 +17,7 @@
 		</div>
 	{% endfor %}
 {% endblock %}
+
+
 
 

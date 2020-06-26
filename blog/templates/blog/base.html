@@ -10,10 +10,16 @@
    </head>
    <body>
       <div class="page-header">
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-	<a href="{% url 'chemistry_new' %}" class="top-menu"><span class="glyphicon glyphicon-tree-conifer"></span></a>
-	<a href="{% url 'german_new' %}" class="top-menu"><span class="glyphicon glyphicon-cloud"></span></a>
-	<a href="{% url 'russian_new' %}" class="top-menu"><span class="glyphicon glyphicon-ok"></span></a>
+	{% block english_new %}
+	{% endblock %}
+	{% block russian_new %}
+	{% endblock %}
+	{% block german_new %}
+	{% endblock %}
+	{% block biology_new %}
+	{% endblock %}
+	{% block chemistry_new %}
+	{% endblock %}
 	<h1><a href="/">My Study Room</a></h1>
        </div>
        {% block welcome %}

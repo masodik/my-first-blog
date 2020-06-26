@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Post, Chemie, German, Russian
+from .models import Post, Chemie, German, Russian, English
 
 class PostForm(forms.ModelForm):
 
@@ -25,3 +25,9 @@ class RussianForm(forms.ModelForm):
 	class Meta:
 		model = Russian
 		fields = ('title', 'text',)
+
+class EnglishForm(forms.ModelForm):
+
+	class Meta:
+		model = English
+		fields = ('title', 'text')

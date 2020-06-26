@@ -1,5 +1,9 @@
 {% extends 'blog/base.html' %}
 
+{% block biology_new %}
+<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+{% endblock %}
+
 {% block content %}
   {% for post in posts %}
     <div class="post">

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post, Chemie, German, Russian, English
-from .forms import PostForm, ChemieForm, GermanForm, RussianForm
+from .forms import PostForm, ChemieForm, GermanForm, RussianForm, EnglishForm
 from django.shortcuts import redirect
 
 # Create your views here.
@@ -111,6 +111,19 @@ def russian_new(request):
 	else:
 		form = RussianForm()
 	return render(request, 'blog/russian_new.html',  {'form': form})
+
+def english_new(request):
+	if request.method == "POST":
+		form = EnglishForm(request.POST)
+		if form.is_valid():
+			english = form.save(commit=False)
+			english.author = request.user
+			english.published_date = timezone.now()
+			english.save()
+			return redirect('english_detail', eng=english.pk)
+	else:
+		form = EnglishForm()
+	return render(request, 'blog/english_new.html', {'form': form})
 
 
 	
