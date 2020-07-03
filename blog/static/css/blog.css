@@ -1,70 +1,60 @@
-h1 a {
-    color: #008000;
-    font-family: 'Chilanka';
-}
-
 body {
-    padding-left : 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f1f1f1;
+	position: relative;
+	padding-bottom: 500px;
+	min-height: 100vh;
 }
 
-.page-header {
-	background-color: #ab2200;
-	margin-top: 0;
-	padding: 20px 20px 20px 20px;
+header {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	padding: 20px;
+	background-color: #313;
+	text-align: center;
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-	color: #ffffff;
-	font-size: 70pt;
-	text-decoration: none;
+
+header h1 a {
+	color:#fff;
+	font-size: 48px;
+	margin-bottom: 30px;
 }
 
-.content {
-	margin-left: 70px;
+main {
+	width: 90vw;
+	margin: 0 auto;
+	padding: 30px 20px;
 }
 
-h1 {
-	font-family: 'Chilanka';	
-	color: #008000
+article {
+	background-color: #fff;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
 }
 
-h2 {
-	font-family: 'Times New Roman';
-	color: #838a04
+article:last-child {
+	margin-bottom: 0;
 }
 
-h3 {
-	font-family: 'Chilanka', cursive;
-	color: #808000
+article h1 a {
+	color: #343;
+	margin: 10px 0 25px 0;
 }
 
-h4 {
-        font-family: 'Arial', cursive;
-	color: #000000
+article p {
+	margin-top: 16px;
+	line-height: 24px;
 }
 
-.date {
-	color: #282828;
-}
-
-.save {
-	float: right;
-}
-
-.post-form textarea, .post-form input {
+footer {
+	text-align: center;
+	background-color: #313;
+	color: #fff;
+	padding: 20px;
+	position: absolute;
+	bottom: 0;
 	width: 100%;
-}
-
-.top-menu, .top-menu:hover, .top-menu:visited {
-	color: #ffffff;
-	float: right;
-	font-size: 26pt;
-	margin-right: 20px;
-}
-
-.post {margin-bottom: 60px;
-}
-
-.post h1 a, .post h1 a:visited {
-	color: #121412;
 }

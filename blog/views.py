@@ -125,6 +125,9 @@ def english_new(request):
 		form = EnglishForm()
 	return render(request, 'blog/english_new.html', {'form': form})
 
+def about(request):
+	return render(request, 'blog/about.html')
+
 
 	
 
