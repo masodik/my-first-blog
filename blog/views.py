@@ -11,18 +11,12 @@ from django.shortcuts import redirect
 def home_page(request):
 	return render(request, 'blog/home_page.html')
 
-def science(request):
-	return render(request, 'blog/science.html')
-
 def languages(request):
 	return render(request, 'blog/languages.html')
 
-def welcome(request):
-	return render(request, 'blog/welcome.html')
-
-def post_list(request):
+def anatomy(request):
 	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-	return render(request, 'blog/post_list.html', {'posts':posts})
+	return render(request, 'blog/anatomy.html', {'posts':posts})
 
 def chemistry(request):
 	chemies = Chemie.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
@@ -48,9 +42,9 @@ def chemistry_detail(request, cm):
 	chemie = get_object_or_404(Chemie, pk=cm)
 	return render(request, 'blog/chemistry_detail.html', {'chemie': chemie})
 
-def post_detail(request, pk):
+def anatomy_detail(request, pk):
 	post = get_object_or_404(Post, pk=pk)
-	return render(request, 'blog/post_detail.html', {'post': post})
+	return render(request, 'blog/anatomy_detail.html', {'post': post})
 
 def german_detail(request, gm):
 	german = get_object_or_404(German, pk=gm)
@@ -60,7 +54,7 @@ def russian_detail(request, rn):
 	russian = get_object_or_404(Russian, pk=rn)
 	return render(request, 'blog/russian_detail.html', {'russian': russian})
 
-def post_new(request):
+def anatomy_new(request):
 	if request.method == "POST":
 		form = PostForm(request.POST)
 		if form.is_valid():
@@ -68,10 +62,10 @@ def post_new(request):
 			post.author = request.user
 			post.published_date = timezone.now()
 			post.save()
-			return redirect('post_detail', pk=post.pk)
+			return redirect('anatomy_detail', pk=post.pk)
 	else:
 		form = PostForm()
-	return render(request, 'blog/post_edit.html', {'form':form}) 
+	return render(request, 'blog/anatomy_new.html', {'form':form})
 
 def chemistry_new(request):
 	if request.method == "POST":
@@ -127,9 +121,3 @@ def english_new(request):
 
 def about(request):
 	return render(request, 'blog/about.html')
-
-
-	
-
-
-
