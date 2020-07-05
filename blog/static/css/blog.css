@@ -26,12 +26,13 @@ sidenav {
 	height: 100%;
 	width: 160px;
 	position: relative;
-	z-index:1;
+  z-index:1;
 	top:0;
 	left:0;
 	background-color:#111;
 	overflow-x: :hidden;
 	padding-top: 20px;
+
 }
 
 sidenav a{
@@ -49,7 +50,7 @@ sidenav a:hover{
 
 main {
 	margin-left:160px;
-	padding: 10px 10px 0px 30px;
+	padding: 0px 10px 0px 30px;
 	background-color: #fff;
 	border-radius: 50px;
 }
