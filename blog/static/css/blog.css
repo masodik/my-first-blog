@@ -25,10 +25,7 @@ header h1 a {
 sidenav {
 	height: 100%;
 	width: 160px;
-	position: relative;
-  z-index:1;
-	top:0;
-	left:0;
+	position: static;
 	background-color:#111;
 	overflow-x: :hidden;
 	padding-top: 20px;
