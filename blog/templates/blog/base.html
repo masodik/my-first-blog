@@ -37,11 +37,7 @@
 	   {% endblock %}
     </header>
 
-    <sidenav>
-      <a href="/anatomy">Anatomy</a>
-      <a href="/chemistry">Chemistry</a>
-      <a href="/languages">Languages</a>
-    </sidenav>
+
 
     <main>
         {% block welcome %}
@@ -54,6 +50,21 @@
        <footer>
 	      <p> NoCopyright &copy; <script> document.write(new Date().getFullYear())</script> My Study Room</p>
        </footer>
+
+       <div class="sidebar">
+         <span class="sidebar-content">
+           <ul class="valami">
+             <li>
+               <a class="sin"href="/anatomy">Anatomy</a></li>
+               <hr>
+               <li><a class="sin"href="/chemistry">Chemistry</a></li>
+               <hr>
+               <li><a class="sin" href="/languages">Languages</a></li>
+           </ul>
+         </span>
+       </div>
+
+
        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
        <!-- Include all compiled plugins (below), or include individual files as needed -->
