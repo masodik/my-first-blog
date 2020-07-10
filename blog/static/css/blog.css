@@ -26,8 +26,7 @@ sidenav {
 	height: 100%;
 	width: 100px;
 	position: fixed;
-	top: 100px;
-	bottom: 300px;
+
 	background-color:#387;
 	overflow-x: :hidden;
 	padding-top: 25px;
@@ -85,11 +84,4 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-}
-
-.top-menu{
-	float: right;
-	font-size: 15pt;
-  margin-right: 20px;
-	top: -20px;
 }
