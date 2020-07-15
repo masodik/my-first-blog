@@ -23,9 +23,9 @@ header h1 a {
 }
 
 .sidebar {
-	width: 160px;
+	width: 10vw;
 	float: left;
-	padding: 10px;
+	padding-right: 2vw;
 	background-color: #e3e3e3;
 	box-shadow: #b9b5b5 1px 0 1px 0;
   position: fixed;
@@ -42,7 +42,7 @@ header h1 a {
 
 .valami{
 	margin: 0;
-	padding: 10;
+  padding: 10;
 	list-style: none;
 }
 
